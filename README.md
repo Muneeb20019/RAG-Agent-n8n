@@ -84,7 +84,7 @@ To set up and run this RAG AI Agent, you will need:
 
 ## Author
 
-[Muneeb Ali Khan]
+[Muneeb Ali Khan] -  https://www.linkedin.com/in/muneeb-ali-khan-2a1675365
 
 ## License
 
