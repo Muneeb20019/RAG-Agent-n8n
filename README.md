@@ -1,4 +1,4 @@
-# RAG-Powered AI Agent with n8n
+# RAG-based Q/A AI Agent
 
 This repository contains an n8n workflow-powered RAG (Retrieval Augmented Generation) AI Agent designed to provide contextual answers based on a custom knowledge base. This project demonstrates how to build a powerful AI agent for document Q&A without writing extensive code, leveraging n8n's visual workflow automation capabilities.
 
