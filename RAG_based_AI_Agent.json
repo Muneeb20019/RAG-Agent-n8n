@@ -1,0 +1,240 @@
+{
+  "name": "RAG based AI Agent",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        20,
+        0
+      ],
+      "id": "a45242ef-9779-45cf-808d-60df8bdb6734",
+      "name": "When chat message received",
+      "webhookId": "cc4e58e2-e8d6-4b93-b4ae-1578d8e3685c"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        180,
+        0
+      ],
+      "id": "b278708c-08c0-4680-aa70-f63b6e16a3d2",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        80,
+        220
+      ],
+      "id": "5d308983-fc43-4844-8ac5-c116a79ca44c",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "A5GP4Uhs76jhXzCg",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        240,
+        220
+      ],
+      "id": "1eb12c5b-f680-4e2b-95c8-33b361a86e2f",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "name": "copper_project",
+        "description": "copper ore received from the Chitral region and used (XRF spectrometer) to examine different elements, which revealed a copper concentration of 17.14 %. We used X-Ray diffraction to analyze the compounds/elements of Cu ore. Crushed ore was combined with a 10% sulfuric acid and distilled water solution and left for a month to leach. Following that, we performed electro-winning utilizing several electrodes (stainless steel strip, copper plate, aluminum strip, galvanized zinc sheet) as cathodes and graphite as anode under variable conditions. Copper was placed on the cathodes, producing strips and powder, which we tested for conductivity."
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolVectorStore",
+      "typeVersion": 1,
+      "position": [
+        500,
+        120
+      ],
+      "id": "76a67da7-5390-483d-8cce-16375150d105",
+      "name": "Answer questions with a vector store"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        440,
+        280
+      ],
+      "id": "3c067524-4461-437e-ad8e-ea9cf1bf0dc3",
+      "name": "OpenAI Chat Model1",
+      "credentials": {
+        "openAiApi": {
+          "id": "A5GP4Uhs76jhXzCg",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "pineconeIndex": {
+          "__rl": true,
+          "value": "n8n-4",
+          "mode": "list",
+          "cachedResultName": "n8n-4"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+      "typeVersion": 1.1,
+      "position": [
+        840,
+        220
+      ],
+      "id": "e5cb5f26-0bb2-4171-8421-0a1ff20b340d",
+      "name": "Pinecone Vector Store",
+      "credentials": {
+        "pineconeApi": {
+          "id": "16T6lOqpepMLTXlP",
+          "name": "PineconeApi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        720,
+        320
+      ],
+      "id": "bac31da3-31e1-450a-8b76-c080b3b21595",
+      "name": "Embeddings OpenAI",
+      "credentials": {
+        "openAiApi": {
+          "id": "A5GP4Uhs76jhXzCg",
+          "name": "OpenAi account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Answer questions with a vector store": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Answer questions with a vector store",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pinecone Vector Store": {
+      "ai_vectorStore": [
+        [
+          {
+            "node": "Answer questions with a vector store",
+            "type": "ai_vectorStore",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Pinecone Vector Store",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "b5bdfc48-68bc-4820-8410-3f378f0fe0fd",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "eaa9a2673fc25961f5be0b649cce5420d2291106b434a24a34ea74bd23f129d4"
+  },
+  "id": "GdY2XK8SBttAG9dz",
+  "tags": []
+}
