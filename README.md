@@ -29,8 +29,6 @@ This workflow is responsible for preparing and uploading your documents to the v
 * **OpenAI Embeddings:** Converts each text chunk into a high-dimensional vector representation.
 * **Pinecone Vector Store:** Uploads these vectors along with their original text content to your Pinecone index, creating your searchable knowledge base.
 
-![Data Loading Workflow](images/RAG%20AI%20Agent%202.png)
-
 ### 2. Chat/Query Workflow (RAG based AI Agent.json)
 
 This workflow handles user queries and retrieves relevant information before generating a response.
@@ -40,8 +38,6 @@ This workflow handles user queries and retrieves relevant information before gen
 * **Pinecone Vector Store (Query):** Uses the query vector to search the knowledge base in Pinecone, retrieving the most relevant document chunks.
 * **OpenAI Chat Model:** Combines the original user query with the retrieved context from Pinecone and a system prompt to instruct the AI model to generate a well-informed answer.
 * **Response:** Delivers the contextual answer back to the user.
-
-![Chat/Query Workflow](images/RAG%20AI%20Agent%201.png)
 
 ## Setup and Installation
 
@@ -54,7 +50,7 @@ To set up and run this RAG AI Agent, you will need:
 
 ### Steps:
 
-1.  **Clone this repository:** (Once it's pushed to GitHub)
+1.  **Clone this repository:**
     ```bash
     git clone [https://github.com/Muneeb20019/RAG-Agent-n8n.git](https://github.com/Muneeb20019/RAG-Agent-n8n.git)
     ```
@@ -82,9 +78,9 @@ To set up and run this RAG AI Agent, you will need:
     * `RAG AI Agent 1.png`
     * `RAG AI Agent 2.png`
 
-## Contributing
+## Name
 
-Feel free to fork this repository, open issues, or submit pull requests.
+[Your Name Here](Your_Profile_URL_Here)
 
 ## License
 
