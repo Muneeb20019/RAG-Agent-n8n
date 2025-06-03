@@ -15,7 +15,7 @@ The RAG AI Agent addresses the common challenge of AI models lacking specific, u
 * **Recursive Character Text Splitter:** Efficiently breaks down documents into manageable chunks for embedding.
 * **Google Drive Integration:** Automates the loading of documents from Google Drive into the vector store.
 
-## How It Works (Architecture)
+## How It Works 
 
 The RAG AI Agent operates in two main phases, each handled by a dedicated n8n workflow:
 
