@@ -15,7 +15,7 @@ The RAG AI Agent addresses the common challenge of AI models lacking specific, u
 * **Recursive Character Text Splitter:** Efficiently breaks down documents into manageable chunks for embedding.
 * **Google Drive Integration:** Automates the loading of documents from Google Drive into the vector store.
 
-## How It Works 
+## How It Works
 
 The RAG AI Agent operates in two main phases, each handled by a dedicated n8n workflow:
 
@@ -29,7 +29,7 @@ This workflow is responsible for preparing and uploading your documents to the v
 * **OpenAI Embeddings:** Converts each text chunk into a high-dimensional vector representation.
 * **Pinecone Vector Store:** Uploads these vectors along with their original text content to your Pinecone index, creating your searchable knowledge base.
 
-![Data Loading Workflow](img/rag-agent-1.png)
+![Data Loading Workflow](images/RAG%20AI%20Agent%202.png.jpeg)
 
 ### 2. Chat/Query Workflow (RAG based AI Agent.json)
 
@@ -41,7 +41,7 @@ This workflow handles user queries and retrieves relevant information before gen
 * **OpenAI Chat Model:** Combines the original user query with the retrieved context from Pinecone and a system prompt to instruct the AI model to generate a well-informed answer.
 * **Response:** Delivers the contextual answer back to the user.
 
-![Chat/Query Workflow](img/rag-agent-2.png)
+![Chat/Query Workflow](images/RAG%20AI%20Agent%201.png.jpeg)
 
 ## Setup and Installation
 
@@ -79,12 +79,12 @@ To set up and run this RAG AI Agent, you will need:
 * `RAG based AI Agent.json`: n8n workflow for handling chat queries and retrieving contextual answers.
 * `README.md`: This project overview and guide.
 * `images/`: Contains screenshots of the n8n workflows.
-    * `RAG AI Agent 1.png`
-    * `RAG AI Agent 2.png`
+    * `RAG AI Agent 1.png.jpeg`
+    * `RAG AI Agent 2.png.jpeg`
 
 ## Author
 
-[Muneeb Ali Khan]    (Your_Profile_URL_Here)
+[Muneeb Ali Khan]
 
 ## License
 
