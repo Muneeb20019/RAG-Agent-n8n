@@ -84,7 +84,7 @@ To set up and run this RAG AI Agent, you will need:
 
 ## Name
 
-[Muneeb Ali Khan] (Your_Profile_URL_Here)
+[Your Name Here](Your_Profile_URL_Here)
 
 ## License
 
