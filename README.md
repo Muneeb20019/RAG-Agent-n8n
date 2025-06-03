@@ -82,9 +82,9 @@ To set up and run this RAG AI Agent, you will need:
     * `RAG AI Agent 1.png`
     * `RAG AI Agent 2.png`
 
-## Name
+## Author
 
-[Your Name Here](Your_Profile_URL_Here)
+[Muneeb Ali Khan]    (Your_Profile_URL_Here)
 
 ## License
 
